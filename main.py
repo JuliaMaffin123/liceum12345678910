@@ -1,4 +1,5 @@
 from flask import Flask
+import os
 
 app = Flask(__name__)
 
@@ -8,4 +9,6 @@ def index():
     return '<h1>Гы</h1>'
 
 
-app.run()
+if __name__ == '__main__':
+    port = os.environ.get('PORT', 5000)
+    app.run()
